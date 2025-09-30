@@ -1,4 +1,4 @@
-# 🎯 HabitHub - iOS Alışkanlık Takip Uygulaması
+# HabitHub - iOS Alışkanlık Takip Uygulaması
 
 <div align="center">
   <img src="https://img.shields.io/badge/iOS-26.0+-blue.svg" alt="iOS Version">
@@ -8,53 +8,43 @@
 </div>
 
 <div align="center">
-  <h3>🚀 Modern iOS Alışkanlık Takip Uygulaması</h3>
+  <h3>Modern iOS Alışkanlık Takip Uygulaması</h3>
   <p>SwiftUI ve Core Data ile geliştirilmiş, kullanıcı dostu alışkanlık yönetim uygulaması</p>
 </div>
 
 ---
 
-## 📱 Uygulama Önizlemesi
+## Özellikler
 
-<div align="center">
-  <img src="https://via.placeholder.com/300x600/007AFF/FFFFFF?text=HabitHub+App" alt="HabitHub App Preview" width="200">
-  <img src="https://via.placeholder.com/300x600/34C759/FFFFFF?text=Today+View" alt="Today View" width="200">
-  <img src="https://via.placeholder.com/300x600/FF9500/FFFFFF?text=Statistics" alt="Statistics" width="200">
-</div>
+### Temel Özellikler
+- **Alışkanlık Yönetimi**: Kolay ekleme, düzenleme ve silme
+- **Günlük Takip**: Her gün alışkanlıklarınızı işaretleyin
+- **Streak Takibi**: Kesintisiz gün sayısını takip edin
+- **Detaylı İstatistikler**: İlerleme raporları ve analizler
+- **Arama ve Filtreleme**: Alışkanlıklarınızı kolayca bulun
 
----
+### Gelişmiş Özellikler
+- **Core Data**: Güvenli yerel veri saklama
+- **Çoklu Dil Desteği**: Türkçe ve İngilizce
+- **Veri Dışa Aktarma**: CSV ve JSON formatında
+- **Yedekleme Sistemi**: Verilerinizi güvenle saklayın
+- **Modern UI**: SwiftUI ile tasarlanmış
+- **Haptic Feedback**: Dokunsal geri bildirim
+- **Hatırlatıcılar**: Özelleştirilebilir bildirimler
 
-## ✨ Özellikler
-
-### 🎯 **Temel Özellikler**
-- ✅ **Alışkanlık Yönetimi**: Kolay ekleme, düzenleme ve silme
-- 📅 **Günlük Takip**: Her gün alışkanlıklarınızı işaretleyin
-- 🔥 **Streak Takibi**: Kesintisiz gün sayısını takip edin
-- 📊 **Detaylı İstatistikler**: İlerleme raporları ve analizler
-- 🔍 **Arama ve Filtreleme**: Alışkanlıklarınızı kolayca bulun
-
-### 🚀 **Gelişmiş Özellikler**
-- 🗄️ **Core Data**: Güvenli yerel veri saklama
-- 🌍 **Çoklu Dil Desteği**: Türkçe ve İngilizce
-- 📤 **Veri Dışa Aktarma**: CSV ve JSON formatında
-- 💾 **Yedekleme Sistemi**: Verilerinizi güvenle saklayın
-- 🎨 **Modern UI**: SwiftUI ile tasarlanmış
-- 📱 **Haptic Feedback**: Dokunsal geri bildirim
-- 🔔 **Hatırlatıcılar**: Özelleştirilebilir bildirimler
-
-### 🆕 **Yeni Özellikler**
-- 🏷️ **Kategori Sistemi**: Alışkanlıkları kategorilere ayırın
-- 🎨 **Renk Özelleştirme**: Her alışkanlık için özel renk
-- 🔤 **İkon Seçimi**: 100+ özel ikon
-- 📝 **Notlar**: Alışkanlık açıklamaları
-- ⏰ **Hatırlatıcı Zamanı**: Özelleştirilebilir bildirim zamanları
-- 📋 **Şablonlar**: Hazır alışkanlık şablonları
+### Yeni Özellikler
+- **Kategori Sistemi**: Alışkanlıkları kategorilere ayırın
+- **Renk Özelleştirme**: Her alışkanlık için özel renk
+- **İkon Seçimi**: 100+ özel ikon
+- **Notlar**: Alışkanlık açıklamaları
+- **Hatırlatıcı Zamanı**: Özelleştirilebilir bildirim zamanları
+- **Şablonlar**: Hazır alışkanlık şablonları
 
 ---
 
-## 🛠️ Teknik Detaylar
+## Teknik Detaylar
 
-### **Kullanılan Teknolojiler**
+### Kullanılan Teknolojiler
 - **SwiftUI**: Modern UI framework
 - **Core Data**: Veri yönetimi ve kalıcılık
 - **MVVM Architecture**: Temiz kod yapısı
@@ -62,37 +52,37 @@
 - **Localization**: Çoklu dil desteği
 - **UserNotifications**: Bildirim sistemi
 
-### **Mimari Yapı**
+### Proje Yapısı
 ```
 HabitHub/
-├── 📱 Views/                 # UI Bileşenleri
-│   ├── 🧩 Components/        # Yeniden kullanılabilir bileşenler
-│   ├── ➕ AddHabitView.swift
-│   ├── 📋 HabitListView.swift
-│   ├── 📅 TodayView.swift
-│   ├── 📊 StatsView.swift
-│   └── ⚙️ SettingsView.swift
-├── 🧠 ViewModels/            # İş mantığı
-│   ├── 📝 HabitViewModel.swift
-│   └── 📊 HabitLogViewModel.swift
-├── 🗄️ Models/                # Veri modelleri
-│   ├── 🎯 Habit+CoreDataClass.swift
-│   └── 📋 HabitLog+CoreDataProperties.swift
-├── 🔧 Utils/                 # Yardımcı sınıflar
-│   ├── 🔥 StreakCalculator.swift
-│   ├── 📤 DataExporter.swift
-│   ├── 🌍 LocalizationHelper.swift
-│   └── 📳 Haptics.swift
-└── 🌐 Resources/             # Lokalizasyon dosyaları
-    ├── 🇹🇷 tr.lproj/
-    └── 🇺🇸 en.lproj/
+├── Views/                 # UI Bileşenleri
+│   ├── Components/        # Yeniden kullanılabilir bileşenler
+│   ├── AddHabitView.swift
+│   ├── HabitListView.swift
+│   ├── TodayView.swift
+│   ├── StatsView.swift
+│   └── SettingsView.swift
+├── ViewModels/            # İş mantığı
+│   ├── HabitViewModel.swift
+│   └── HabitLogViewModel.swift
+├── Models/                # Veri modelleri
+│   ├── Habit+CoreDataClass.swift
+│   └── HabitLog+CoreDataProperties.swift
+├── Utils/                 # Yardımcı sınıflar
+│   ├── StreakCalculator.swift
+│   ├── DataExporter.swift
+│   ├── LocalizationHelper.swift
+│   └── Haptics.swift
+└── Resources/             # Lokalizasyon dosyaları
+    ├── tr.lproj/
+    └── en.lproj/
 ```
 
 ---
 
-## 📊 Veri Modeli
+## Veri Modeli
 
-### **Habit Entity**
+### Habit Entity
 ```swift
 - id: UUID (Benzersiz kimlik)
 - name: String (Alışkanlık adı)
@@ -107,7 +97,7 @@ HabitHub/
 - reminderTime: Date (Hatırlatıcı zamanı)
 ```
 
-### **HabitLog Entity**
+### HabitLog Entity
 ```swift
 - id: UUID (Benzersiz kimlik)
 - date: Date (Tarih)
@@ -118,30 +108,30 @@ HabitHub/
 
 ---
 
-## 🎨 UI/UX Özellikleri
+## UI/UX Özellikleri
 
-### **Tasarım Prensipleri**
-- 🎯 **Sade ve Temiz**: Karmaşık animasyonlar yok
-- 👥 **Kullanıcı Dostu**: Sezgisel navigasyon
-- ♿ **Erişilebilir**: Tüm kullanıcılar için uygun
-- 📱 **Responsive**: Tüm cihaz boyutlarında çalışır
+### Tasarım Prensipleri
+- **Sade ve Temiz**: Karmaşık animasyonlar yok
+- **Kullanıcı Dostu**: Sezgisel navigasyon
+- **Erişilebilir**: Tüm kullanıcılar için uygun
+- **Responsive**: Tüm cihaz boyutlarında çalışır
 
-### **Renk Paleti**
-- 🔵 **Accent Color**: Sistem mavisi
-- 🟢 **Success**: Yeşil (tamamlanan alışkanlıklar)
-- 🟠 **Warning**: Turuncu (dikkat gerektiren durumlar)
-- 🔴 **Error**: Kırmızı (hata durumları)
+### Renk Paleti
+- **Accent Color**: Sistem mavisi
+- **Success**: Yeşil (tamamlanan alışkanlıklar)
+- **Warning**: Turuncu (dikkat gerektiren durumlar)
+- **Error**: Kırmızı (hata durumları)
 
 ---
 
-## 🔧 Kurulum
+## Kurulum
 
-### **Gereksinimler**
-- 📱 iOS 15.0+
-- 💻 Xcode 14.0+
-- 🚀 Swift 5.0+
+### Gereksinimler
+- iOS 15.0+
+- Xcode 14.0+
+- Swift 5.0+
 
-### **Adımlar**
+### Adımlar
 1. **Projeyi klonlayın**
    ```bash
    git clone https://github.com/mehmetd7mir/HabitHub.git
@@ -158,90 +148,82 @@ HabitHub/
 
 ---
 
-## 📱 Kullanım
+## Kullanım
 
-### **Alışkanlık Ekleme**
-1. Ana ekranda **"+"** butonuna tıklayın
+### Alışkanlık Ekleme
+1. Ana ekranda "+" butonuna tıklayın
 2. Alışkanlık adını girin
 3. Kategori, ikon ve renk seçin
 4. Hedef gün sayısını belirleyin
 5. Hatırlatıcı zamanı ayarlayın
-6. **"Kaydet"** butonuna tıklayın
+6. "Kaydet" butonuna tıklayın
 
-### **Günlük Takip**
-1. **"Bugün"** sekmesine gidin
+### Günlük Takip
+1. "Bugün" sekmesine gidin
 2. Tamamladığınız alışkanlıkları işaretleyin
 3. İlerlemenizi takip edin
 
-### **İstatistikler**
-1. **"İstatistikler"** sekmesine gidin
+### İstatistikler
+1. "İstatistikler" sekmesine gidin
 2. Genel ilerlemenizi görün
 3. Haftalık performansınızı analiz edin
 
 ---
 
-## 🌍 Lokalizasyon
+## Lokalizasyon
 
 Uygulama şu dilleri destekler:
-- 🇹🇷 **Türkçe** (Varsayılan)
-- 🇺🇸 **İngilizce**
+- **Türkçe** (Varsayılan)
+- **İngilizce**
 
 ---
 
-## 📤 Veri Dışa Aktarma
+## Veri Dışa Aktarma
 
-### **Desteklenen Formatlar**
-- 📊 **CSV**: Excel ile uyumlu
-- 📄 **JSON**: Programatik erişim
+### Desteklenen Formatlar
+- **CSV**: Excel ile uyumlu
+- **JSON**: Programatik erişim
 
-### **Kullanım**
-1. **"Ayarlar"** sekmesine gidin
-2. **"Verileri Dışa Aktar"** seçeneğini seçin
+### Kullanım
+1. "Ayarlar" sekmesine gidin
+2. "Verileri Dışa Aktar" seçeneğini seçin
 3. İstediğiniz formatı seçin
 4. Paylaşın veya kaydedin
 
 ---
 
-## 🚀 Gelecek Özellikler
+## Gelecek Özellikler
 
-- [ ] 📱 Widget desteği
-- [ ] 🔔 Push bildirimleri
-- [ ] ☁️ iCloud senkronizasyonu
-- [ ] ⌚ Apple Watch uygulaması
-- [ ] 👥 Sosyal özellikler
-- [ ] 🎯 Hedef belirleme sistemi
-- [ ] 📈 Gelişmiş analitikler
-- [ ] 🏆 Başarı rozetleri
-
----
-
-## 👨‍💻 Geliştirici
-
-<div align="center">
-  <img src="https://via.placeholder.com/150x150/007AFF/FFFFFF?text=MD" alt="Mehmet Demir" width="100">
-  
-  **Mehmet Demir**
-  
-  🎯 Savunma sanayii alanına geçiş için geliştirilmiş
-  
-  💻 SwiftUI ve Core Data uzmanlığı
-  
-  🚀 Modern iOS geliştirme pratikleri
-</div>
+- [ ] Widget desteği
+- [ ] Push bildirimleri
+- [ ] iCloud senkronizasyonu
+- [ ] Apple Watch uygulaması
+- [ ] Sosyal özellikler
+- [ ] Hedef belirleme sistemi
+- [ ] Gelişmiş analitikler
+- [ ] Başarı rozetleri
 
 ---
 
-## 📄 Lisans
+## Geliştirici
+
+**Mehmet Demir**
+
+Savunma sanayii alanına geçiş için geliştirilmiş portfolyo projesi. SwiftUI ve Core Data uzmanlığı ile modern iOS geliştirme pratikleri kullanılarak oluşturulmuştur.
+
+---
+
+## Lisans
 
 Bu proje kişisel kullanım için geliştirilmiştir.
 
 ---
 
-## 🤝 Katkıda Bulunma
+## Katkıda Bulunma
 
 Bu proje kişisel bir portfolyo projesidir. Katkılarınız için teşekkürler!
 
-### **Katkıda Bulunma Adımları**
+### Katkıda Bulunma Adımları
 1. Fork yapın
 2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
 3. Commit yapın (`git commit -m 'Add some AmazingFeature'`)
@@ -250,17 +232,17 @@ Bu proje kişisel bir portfolyo projesidir. Katkılarınız için teşekkürler!
 
 ---
 
-## 📞 İletişim
+## İletişim
 
-- 📧 **Email**: [mehmetd7mir@gmail.com](mailto:mehmetd7mir@gmail.com)
-- 💼 **LinkedIn**: [Mehmet Demir](https://linkedin.com/in/mehmetd7mir)
-- 🐙 **GitHub**: [@mehmetd7mir](https://github.com/mehmetd7mir)
+- **Email**: [mehmetd7mir@gmail.com](mailto:mehmetd7mir@gmail.com)
+- **LinkedIn**: [Mehmet Demir](https://linkedin.com/in/mehmetd7mir)
+- **GitHub**: [@mehmetd7mir](https://github.com/mehmetd7mir)
 
 ---
 
 <div align="center">
-  <p>⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!</p>
-  <p>🚀 <strong>HabitHub ile alışkanlıklarınızı takip edin, hedeflerinize ulaşın!</strong></p>
+  <p>Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!</p>
+  <p><strong>HabitHub ile alışkanlıklarınızı takip edin, hedeflerinize ulaşın!</strong></p>
 </div>
 
 ---
