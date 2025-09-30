@@ -61,7 +61,7 @@ struct EditHabitView: View {
                     }) {
                         HStack {
                             Spacer()
-                            Text(LocalizedKeys.save.localized)
+                            Text(LocalizedKeys.update.localized)
                                 .fontWeight(.semibold)
                             Spacer()
                         }

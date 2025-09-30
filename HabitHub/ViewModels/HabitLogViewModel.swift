@@ -37,6 +37,7 @@ class HabitLogViewModel: ObservableObject {
         } catch {
             print("Error loading today's habits: \(error)")
             todayHabits = []
+            // Show user-friendly error if needed
         }
     }
     
@@ -45,10 +46,16 @@ class HabitLogViewModel: ObservableObject {
         
         do {
             try viewContext.save()
+            if habitWithLog.log.isCompleted {
+                Haptics.success()
+            } else {
+                Haptics.lightImpact()
+            }
             // Reload to update UI
             loadTodayHabits()
         } catch {
             print("Error toggling habit completion: \(error)")
+            Haptics.error()
         }
     }
     

@@ -157,7 +157,7 @@ struct ProgressChartView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(LocalizedKeys.totalDays.localized + " 30")
+            Text("\(LocalizedKeys.totalDays.localized) 30")
                 .font(.headline)
             
             HStack(spacing: 2) {
@@ -190,7 +190,7 @@ struct ProgressChartView: View {
                         .fill(Color.gray.opacity(0.3))
                         .frame(width: 8, height: 8)
                         .cornerRadius(2)
-                    Text(LocalizedKeys.completed.localized + " değil")
+                    Text("\(LocalizedKeys.completed.localized) değil")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }

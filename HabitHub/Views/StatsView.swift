@@ -50,27 +50,35 @@ struct StatsView: View {
     }
     
     private func loadOverallStats() {
-        let activeHabits = habits.filter { $0.isActive }
-        let totalHabits = habits.count
-        
-        var totalCompletedDays = 0
-        var totalStreak = 0
-        
-        for habit in activeHabits {
-            totalCompletedDays += Int(StreakCalculator.calculateCompletionRate(for: habit, context: viewContext) * 30)
-            totalStreak += StreakCalculator.calculateCurrentStreak(for: habit, context: viewContext)
+        DispatchQueue.global(qos: .userInitiated).async {
+            let activeHabits = habits.filter { $0.isActive }
+            let totalHabits = habits.count
+            
+            var totalCompletedDays = 0
+            var totalStreak = 0
+            var totalCompletionRate = 0.0
+            
+            for habit in activeHabits {
+                let completionRate = StreakCalculator.calculateCompletionRate(for: habit, context: viewContext)
+                totalCompletedDays += Int(completionRate * 30)
+                totalStreak += StreakCalculator.calculateCurrentStreak(for: habit, context: viewContext)
+                totalCompletionRate += completionRate
+            }
+            
+            let averageCompletionRate = activeHabits.isEmpty ? 0.0 : totalCompletionRate / Double(activeHabits.count)
+            
+            let stats = OverallStats(
+                totalHabits: totalHabits,
+                activeHabits: activeHabits.count,
+                totalCompletedDays: totalCompletedDays,
+                averageCompletionRate: averageCompletionRate,
+                totalStreak: totalStreak
+            )
+            
+            DispatchQueue.main.async {
+                self.overallStats = stats
+            }
         }
-        
-        let averageCompletionRate = activeHabits.isEmpty ? 0.0 : 
-            activeHabits.map { StreakCalculator.calculateCompletionRate(for: $0, context: viewContext) }.reduce(0, +) / Double(activeHabits.count)
-        
-        overallStats = OverallStats(
-            totalHabits: totalHabits,
-            activeHabits: activeHabits.count,
-            totalCompletedDays: totalCompletedDays,
-            averageCompletionRate: averageCompletionRate,
-            totalStreak: totalStreak
-        )
     }
 }
 
@@ -230,7 +238,7 @@ struct HabitPerformanceRowView: View {
                 Text(habit.name ?? "Unknown")
                     .font(.headline)
                 
-                Text("\(Int(completionRate * 100))% tamamlanma")
+                Text("\(Int(completionRate * 100))% \(LocalizedKeys.completionRate.localized)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -238,12 +246,12 @@ struct HabitPerformanceRowView: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 4) {
-                Text("\(currentStreak) gün")
+                Text("\(currentStreak) \(LocalizedKeys.days.localized)")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.accentColor)
                 
-                Text("streak")
+                Text(LocalizedKeys.streak.localized)
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -255,8 +263,15 @@ struct HabitPerformanceRowView: View {
     }
     
     private func loadPerformanceData() {
-        completionRate = StreakCalculator.calculateCompletionRate(for: habit, context: viewContext)
-        currentStreak = StreakCalculator.calculateCurrentStreak(for: habit, context: viewContext)
+        DispatchQueue.global(qos: .userInitiated).async {
+            let rate = StreakCalculator.calculateCompletionRate(for: habit, context: viewContext)
+            let streak = StreakCalculator.calculateCurrentStreak(for: habit, context: viewContext)
+            
+            DispatchQueue.main.async {
+                self.completionRate = rate
+                self.currentStreak = streak
+            }
+        }
     }
 }
 

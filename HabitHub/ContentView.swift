@@ -19,7 +19,7 @@ struct ContentView: View {
                     Text(LocalizedKeys.habits.localized)
                 }
             
-            TodayView(context: viewContext)
+            TodayViewNew(context: viewContext)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text(LocalizedKeys.today.localized)
@@ -34,7 +34,7 @@ struct ContentView: View {
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
-                    Text("Ayarlar")
+                    Text(LocalizedKeys.settings.localized)
                 }
         }
     }

@@ -69,9 +69,9 @@ enum FilterOption: CaseIterable {
     
     var title: String {
         switch self {
-        case .all: return "Tümü"
-        case .active: return "Aktif"
-        case .inactive: return "Pasif"
+        case .all: return LocalizedKeys.all.localized
+        case .active: return LocalizedKeys.active.localized
+        case .inactive: return LocalizedKeys.inactive.localized
         }
     }
 }

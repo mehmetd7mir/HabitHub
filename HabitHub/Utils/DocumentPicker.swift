@@ -31,8 +31,15 @@ final class DocumentPicker: NSObject, UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let url = urls.first else { return }
+        guard let url = urls.first else { 
+            print("DocumentPicker: No URL selected")
+            return 
+        }
         completion?(url)
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print("DocumentPicker: User cancelled document selection")
     }
 }
 

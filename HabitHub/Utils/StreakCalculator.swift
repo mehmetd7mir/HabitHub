@@ -96,7 +96,7 @@ struct StreakCalculator {
             let logs = try context.fetch(request)
             return logs.first?.isCompleted ?? false
         } catch {
-            print("Error checking habit completion: \(error)")
+            print("Error checking habit completion for habit '\(habit.name ?? "Unknown")' on date \(date): \(error)")
             return false
         }
     }

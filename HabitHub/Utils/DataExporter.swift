@@ -103,8 +103,7 @@ struct DataExporter {
     }
     
     private static func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formatter = ISO8601DateFormatter()
         return formatter.string(from: date)
     }
     
@@ -130,7 +129,9 @@ struct BackupManager {
     static func importFromJSON(context: NSManagedObjectContext, url: URL) throws {
         let data = try Data(contentsOf: url)
         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-        guard let habits = json?["habits"] as? [[String: Any]] else { return }
+        guard let habits = json?["habits"] as? [[String: Any]] else { 
+            throw NSError(domain: "DataExporter", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Invalid JSON format or missing habits data"])
+        }
         
         // Simple restore: insert all as new records
         for habitData in habits {
@@ -150,13 +151,19 @@ struct BackupManager {
                     log.id = UUID(uuidString: (logData["id"] as? String) ?? UUID().uuidString)
                     if let d = logData["date"] as? String, let date = ISO8601DateFormatter().date(from: d) {
                         log.date = Calendar.current.startOfDay(for: date)
+                    } else {
+                        log.date = Calendar.current.startOfDay(for: Date())
                     }
                     log.isCompleted = logData["is_completed"] as? Bool ?? false
                     log.habit = habit
                 }
             }
         }
-        try context.save()
+        do {
+            try context.save()
+        } catch {
+            throw NSError(domain: "DataExporter", code: 1002, userInfo: [NSLocalizedDescriptionKey: "Failed to save imported data: \(error.localizedDescription)"])
+        }
     }
     
     static func shareBackup(context: NSManagedObjectContext) -> [Any] {

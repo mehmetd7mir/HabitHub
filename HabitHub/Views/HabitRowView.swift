@@ -19,7 +19,7 @@ struct HabitRowView: View {
                 Text(habit.name ?? "Unknown")
                     .font(.headline)
                 
-                Text("Hedef: \(habit.targetDays) gün")
+                Text("\(LocalizedKeys.targetDays.localized): \(habit.targetDays) \(LocalizedKeys.days.localized)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -27,7 +27,7 @@ struct HabitRowView: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 4) {
-                Text("Streak: \(currentStreak)")
+                Text("\(LocalizedKeys.streak.localized): \(currentStreak)")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 

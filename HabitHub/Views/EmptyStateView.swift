@@ -41,7 +41,7 @@ struct EmptyStateView: View {
         }
         .padding()
         .sheet(isPresented: $showingAddHabit) {
-            AddHabitView(context: viewContext)
+            AddHabitViewNew(context: viewContext)
         }
     }
 }

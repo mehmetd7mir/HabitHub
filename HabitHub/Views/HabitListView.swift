@@ -64,18 +64,18 @@ struct HabitListView: View {
                 } else {
                     List {
                         ForEach(filteredHabits, id: \.id) { habit in
-                            HabitRowView(habit: habit)
+                            HabitRowViewNew(habit: habit)
                                 .onTapGesture {
                                     selectedHabit = habit
                                     showingDetailView = true
                                 }
                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                    Button("Sil", role: .destructive) {
+                                    Button(LocalizedKeys.delete.localized, role: .destructive) {
                                         habitToDelete = habit
                                         showingDeleteAlert = true
                                     }
                                     
-                                    Button("Düzenle") {
+                                    Button(LocalizedKeys.edit.localized) {
                                         selectedHabit = habit
                                         showingEditHabit = true
                                     }
@@ -97,7 +97,7 @@ struct HabitListView: View {
                 }
             }
             .sheet(isPresented: $showingAddHabit) {
-                AddHabitView(context: viewContext)
+                AddHabitViewNew(context: viewContext)
             }
             .sheet(isPresented: $showingEditHabit) {
                 if let habit = selectedHabit {
@@ -127,8 +127,10 @@ struct HabitListView: View {
         
         do {
             try viewContext.save()
+            Haptics.success()
         } catch {
             print("Error deleting habit: \(error)")
+            Haptics.error()
         }
     }
 }

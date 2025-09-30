@@ -89,7 +89,6 @@ struct TodayHabitRowView: View {
     var body: some View {
         HStack {
             Button(action: {
-                Haptics.lightImpact()
                 onToggle()
             }) {
                 Image(systemName: habitWithLog.log.isCompleted ? "checkmark.circle.fill" : "circle")
@@ -105,7 +104,7 @@ struct TodayHabitRowView: View {
                     .font(.headline)
                     .strikethrough(habitWithLog.log.isCompleted)
                 
-                Text("Hedef: \(habitWithLog.habit.targetDays) gün")
+                Text("\(LocalizedKeys.targetDays.localized): \(habitWithLog.habit.targetDays) \(LocalizedKeys.days.localized)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -125,11 +124,11 @@ struct EmptyTodayView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.secondary)
             
-            Text("Bugün için alışkanlık yok")
+            Text(LocalizedKeys.noHabitsToday.localized)
                 .font(.title2)
                 .fontWeight(.medium)
             
-            Text("Aktif alışkanlıklarınız burada görünecek")
+            Text(LocalizedKeys.activeHabitsHere.localized)
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

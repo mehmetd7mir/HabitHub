@@ -23,22 +23,26 @@ class HabitViewModel: ObservableObject {
     
     func saveHabit() -> Bool {
         // Validation
-        guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedName.isEmpty else {
+            print("Validation failed: Habit name is empty")
             return false
         }
         
-        guard name.count >= 3 else {
+        guard trimmedName.count >= 3 else {
+            print("Validation failed: Habit name too short (\(trimmedName.count) characters)")
             return false
         }
         
         guard targetDays >= 1 && targetDays <= 365 else {
+            print("Validation failed: Target days out of range (\(targetDays))")
             return false
         }
         
         // Create new habit
         let habit = Habit(context: viewContext)
         habit.id = UUID()
-        habit.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        habit.name = trimmedName
         habit.createdDate = Date()
         habit.targetDays = Int32(targetDays)
         habit.isActive = isActive
@@ -60,8 +64,9 @@ class HabitViewModel: ObservableObject {
     }
     
     var isFormValid: Bool {
-        return !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
-               name.count >= 3 &&
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        return !trimmedName.isEmpty &&
+               trimmedName.count >= 3 &&
                targetDays >= 1 &&
                targetDays <= 365
     }

@@ -114,9 +114,11 @@ struct SettingsView: View {
     
     private func createBackup() {
         if let _ = BackupManager.createBackup(context: viewContext) {
+            Haptics.success()
             alertMessage = LocalizedKeys.backupCreated.localized
             showingAlert = true
         } else {
+            Haptics.error()
             alertMessage = LocalizedKeys.backupFailed.localized
             showingAlert = true
         }
@@ -126,8 +128,10 @@ struct SettingsView: View {
         DocumentPicker.presentJSON { url in
             do {
                 try BackupManager.importFromJSON(context: viewContext, url: url)
+                Haptics.success()
                 alertMessage = LocalizedKeys.importSuccess.localized
             } catch {
+                Haptics.error()
                 alertMessage = LocalizedKeys.importFailed.localized
             }
             showingAlert = true
