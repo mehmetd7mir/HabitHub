@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings (Turkish)
+  HabitHub
+*/
+
+// Navigation
+"habits" = "Alışkanlıklar";
+"today" = "Bugün";
+"stats" = "İstatistikler";
+
+// Common
+"save" = "Kaydet";
+"cancel" = "İptal";
+"delete" = "Sil";
+"edit" = "Düzenle";
+"add" = "Ekle";
+"close" = "Kapat";
+"done" = "Tamam";
+"yes" = "Evet";
+"no" = "Hayır";
+
+// Habits
+"my_habits" = "Alışkanlıklarım";
+"add_habit" = "Alışkanlık Ekle";
+"new_habit" = "Yeni Alışkanlık";
+"edit_habit" = "Alışkanlığı Düzenle";
+"delete_habit" = "Alışkanlığı Sil";
+"habit_name" = "Alışkanlık adı";
+"target_days" = "Hedef gün sayısı";
+"days" = "gün";
+"active" = "Aktif";
+"inactive" = "Pasif";
+"streak" = "Streak";
+
+// Today
+"today_progress" = "Bugünün İlerlemesi";
+"completed" = "tamamlandı";
+"no_habits_today" = "Bugün için alışkanlık yok";
+"active_habits_here" = "Aktif alışkanlıklarınız burada görünecek";
+"completed_label" = "Tamamlandı";
+
+// Stats
+"statistics" = "İstatistikler";
+"overall_progress" = "Genel İlerleme";
+"weekly_progress" = "Haftalık İlerleme";
+"habit_performance" = "Alışkanlık Performansı";
+"total_habits" = "Toplam Alışkanlık";
+"active_habits" = "Aktif Alışkanlık";
+"completed_days" = "Tamamlanan Gün";
+"average_rate" = "Ortalama Oran";
+"current_streak" = "Mevcut Streak";
+"longest_streak" = "En Uzun Streak";
+"completion_rate" = "Tamamlanma Oranı";
+"total_days" = "Toplam Gün";
+
+// Empty States
+"no_habits_yet" = "Henüz alışkanlık yok";
+"add_first_habit" = "İlk alışkanlığınızı ekleyerek başlayın";
+"no_search_results" = "Arama sonucu bulunamadı";
+"try_different_keywords" = "Farklı anahtar kelimeler deneyin veya filtreleri değiştirin";
+
+// Search & Filter
+"search_habits" = "Alışkanlık ara...";
+"all" = "Tümü";
+"filter" = "Filtrele";
+
+// Alerts
+"error" = "Hata";
+"enter_valid_info" = "Lütfen geçerli bilgiler girin";
+"delete_confirmation" = "Bu alışkanlığı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.";
+"loading_stats" = "İstatistikler yükleniyor...";
+
+// Form Validation
+"name_required" = "Alışkanlık adı gerekli";
+"name_min_length" = "Alışkanlık adı en az 3 karakter olmalı";
+"target_days_range" = "Hedef gün sayısı 1-365 arası olmalı";
+"habit_info" = "Alışkanlık Bilgileri";
+"settings" = "Ayarlar";
+"data_management" = "Veri Yönetimi";
+"export_data" = "Verileri Dışa Aktar";
+"create_backup" = "Yedek Oluştur";
+"app_info" = "Uygulama Bilgileri";
+"version" = "Sürüm";
+"developer" = "Geliştirici";
+"support" = "Destek";
+"help" = "Yardım";
+"feedback" = "Geri Bildirim";
+"info" = "Bilgi";
+"no_data_to_export" = "Dışa aktarılacak veri bulunamadı";
+"backup_created" = "Yedek başarıyla oluşturuldu";
+"backup_failed" = "Yedek oluşturulurken hata oluştu";
+"json_import" = "JSON İçe Aktar";
+"import_success" = "İçe aktarma tamamlandı";
+"import_failed" = "İçe aktarma başarısız";
