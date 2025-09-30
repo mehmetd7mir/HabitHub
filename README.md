@@ -234,7 +234,7 @@ Bu proje kişisel bir portfolyo projesidir. Katkılarınız için teşekkürler!
 
 ## İletişim
 
-- **Email**: [mehmetd7mir@gmail.com](mailto:mehmetd7mir@gmail.com)
+- **Email**: [d7mirmehmet@gmail.com](mailto:mehmetd7mir@gmail.com)
 - **LinkedIn**: [Mehmet Demir](https://linkedin.com/in/mehmetd7mir)
 - **GitHub**: [@mehmetd7mir](https://github.com/mehmetd7mir)
 
